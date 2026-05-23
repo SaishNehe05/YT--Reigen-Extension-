@@ -65,12 +65,9 @@ The glow engine samples colors from the video edges in real-time and projects th
 
 ## 🚀 Installation
 
-### Load as Unpacked Extension (Developer Mode)
+### Option 1: Install via CRX File (Quick)
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/SaishNehe05/YT--Reigen-Extension-.git
-   ```
+1. **Download** the `YT - extension.crx` file from this repository
 
 2. **Open Chrome** and navigate to:
    ```
@@ -79,9 +76,22 @@ The glow engine samples colors from the video edges in real-time and projects th
 
 3. **Enable Developer Mode** (toggle in the top-right corner)
 
-4. Click **"Load unpacked"** and select the cloned project folder
+4. **Drag and drop** the `.crx` file onto the extensions page
 
 5. **Navigate to YouTube** — the ambient glow activates automatically on any video page 🎬
+
+### Option 2: Load Unpacked (Developer Mode)
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/SaishNehe05/YT--Reigen-Extension-.git
+   ```
+
+2. **Open Chrome** → go to `chrome://extensions/` → **Enable Developer Mode**
+
+3. Click **"Load unpacked"** and select the cloned project folder
+
+4. **Navigate to YouTube** and enjoy the cinematic experience 🎬
 
 ---
 
@@ -109,6 +119,8 @@ YT-Reigen/
 ├── popup.css              # Glassmorphism popup styles
 ├── popup.js               # Popup logic — toggle sync with chrome.storage
 ├── icon.png               # Extension icon
+├── YT - extension.crx     # Packaged extension for quick install
+├── .gitignore             # Excludes private key (.pem) from repo
 ├── screenshots/           # README screenshots
 │   ├── ambient-teal.png
 │   ├── ambient-red.png
@@ -132,9 +144,3 @@ YT-Reigen/
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/SaishNehe05">SaishNehe05</a>
-</p>
