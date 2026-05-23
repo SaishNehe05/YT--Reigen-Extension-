@@ -19,6 +19,12 @@
   <img src="https://img.shields.io/badge/Platform-Chrome-yellow?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome" />
 </p>
 
+<p align="center">
+  <a href="https://github.com/SaishNehe05/YT--Reigen-Extension-/raw/main/YT%20-%20extension.crx">
+    <img src="https://img.shields.io/badge/Download-Extension_CRX-ff4b4b?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Download Extension" />
+  </a>
+</p>
+
 ---
 
 ## 🖼️ Screenshots
@@ -67,7 +73,9 @@ The glow engine samples colors from the video edges in real-time and projects th
 
 ### Option 1: Install via CRX File (Quick)
 
-1. **Download** the `YT - extension.crx` file from this repository
+1. **Download** the extension file:
+   
+   [![Download CRX](https://img.shields.io/badge/Download-YT--extension.crx-ff4b4b?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/SaishNehe05/YT--Reigen-Extension-/raw/main/YT%20-%20extension.crx)
 
 2. **Open Chrome** and navigate to:
    ```
