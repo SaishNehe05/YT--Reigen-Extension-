@@ -116,47 +116,7 @@ YT-Reigen/
 └── README.md
 ```
 
----
 
-## ⚙️ How the Ambient Glow Works
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  VIDEO FRAME                                            │
-│  ┌──────┬──────────────────────────────────┬──────┐     │
-│  │ LEFT │            TOP EDGE              │RIGHT │     │
-│  │ EDGE │                                  │ EDGE │     │
-│  │      │                                  │      │     │
-│  │      │        Video Content             │      │     │
-│  │      │                                  │      │     │
-│  │      │          BOTTOM EDGE             │      │     │
-│  └──────┴──────────────────────────────────┴──────┘     │
-└─────────────────────────────────────────────────────────┘
-                          ↓
-         ┌────────────────────────────────┐
-         │   64×36 offscreen canvas       │
-         │   Sample 4 edge regions        │
-         │   EMA color smoothing (0.5)    │
-         └────────────────────────────────┘
-                          ↓
-         ┌────────────────────────────────┐
-         │   160×90 fullscreen glow       │
-         │   4 radial gradients drawn     │
-         │   GPU-composited layer         │
-         │   Delta-threshold skip (<2)    │
-         └────────────────────────────────┘
-                          ↓
-              🎬 Cinematic Ambient Glow
-```
-
-**Key optimizations:**
-- **`requestVideoFrameCallback`** — syncs sampling to actual video frame updates, not arbitrary timers
-- **Motion energy check** — skips processing entirely when the video frame hasn't changed
-- **Delta-threshold rendering** — skips canvas writes when color change is imperceptible (Δ < 2)
-- **`desynchronized: true`** — bypasses double-buffering for lower latency
-- **`will-change: transform`** + **`contain: strict`** — isolates the glow canvas on its own compositor layer
-
----
 
 ## 🛠️ Tech Stack
 
