@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT-Reigen Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="glass-panel">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <span class="logo-red-dot"></span>
+        <h1 class="logo-title">YT - REIGEN</h1>
+      </div>
+      <p class="logo-subtitle">Cinematic Ambient Engine</p>
+    </header>
+
+    <!-- Master Switch Section -->
+    <div class="control-card master-card">
+      <div class="card-info">
+        <span class="card-label">Ambient Glow Engine</span>
+        <span class="card-desc">Real-time dynamic backdrop color matching</span>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="glowEnabled" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+
+
+    <!-- UI Feature Toggles -->
+    <section class="settings-section">
+      <h2 class="section-title">Cinematic Layouts</h2>
+
+      <!-- Toggle: Minimalist Search -->
+      <div class="control-card">
+        <div class="card-info">
+          <span class="card-label">Minimalist Search</span>
+          <span class="card-desc">Collapses masthead search box (hotkey S)</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="searchEnabled" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Footer Stats / Status Badge -->
+    <footer class="footer">
+      <div class="status-badge" id="statusBadge">
+        <span class="status-dot pulsing"></span>
+        <span class="status-text">Ambient Mode Ready</span>
+      </div>
+      <div class="version-text">v1.0.0</div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

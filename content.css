@@ -1,0 +1,202 @@
+/* YT-Reigen Cinematic stylesheet */
+
+/* --- ROOT VARIABLES --- */
+:root {
+  --yt-searchbox-background: rgba(15, 15, 15, 0.01) !important;
+  --ytd-searchbox-background: rgba(15, 15, 15, 0.01) !important;
+  --yt-searchbox-text-color: #fff !important;
+}
+
+/* --- OPTIMIZED STATIC AMBIENT GLOW CANVAS --- */
+#ambient-fullscreen-glow {
+  position: fixed;
+  top: -10vh;
+  left: -10vw;
+  width: 120vw;
+  height: 120vh;
+  z-index: -99999; /* Absolute bottom of DOM stacking context */
+  pointer-events: none;
+  
+  /* Compositor Layer Isolation & Acceleration */
+  contain: strict;
+  will-change: transform;
+  transform: translate3d(0, 0, 0); /* Force GPU compositor layer acceleration */
+  backface-visibility: hidden;
+  
+  /* Solid Opaque Background for Compositor Acceleration */
+  opacity: 1; /* Locked to 1 forever - prevents recomposition passes */
+  background-color: #000000; /* Solid opaque canvas background */
+}
+
+/* --- OPTIMIZED CINEMATIC LAYOUT STYLES --- */
+/* Using rgba(15, 15, 15, 0.01) instead of transparent to leverage Chromium rendering shortcuts */
+
+/* Make <html> itself transparent so the canvas glow shows through with no gaps */
+html:has(body.reigen-cinematic-active.reigen-watching),
+html.reigen-html-transparent {
+  background: rgba(15, 15, 15, 0.01) !important;
+  background-color: rgba(15, 15, 15, 0.01) !important;
+}
+
+/* Mask the browser's native 1px separator line between toolbar and webpage */
+html:has(body.reigen-cinematic-active.reigen-watching)::before,
+html.reigen-html-transparent::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 3px !important;
+  background: linear-gradient(to bottom, #0f0f0f 0%, transparent 100%) !important;
+  z-index: 999999 !important;
+  pointer-events: none !important;
+}
+
+body.reigen-cinematic-active.reigen-watching,
+body.reigen-cinematic-active.reigen-watching ytd-app, 
+body.reigen-cinematic-active.reigen-watching #content,
+body.reigen-cinematic-active.reigen-watching #page-manager, 
+body.reigen-cinematic-active.reigen-watching ytd-watch-flexy,
+body.reigen-cinematic-active.reigen-watching #columns, 
+body.reigen-cinematic-active.reigen-watching #primary,
+body.reigen-cinematic-active.reigen-watching #secondary, 
+body.reigen-cinematic-active.reigen-watching #secondary-inner,
+body.reigen-cinematic-active.reigen-watching #related, 
+body.reigen-cinematic-active.reigen-watching ytd-playlist-panel-renderer,
+body.reigen-cinematic-active.reigen-watching #container.ytd-playlist-panel-renderer, 
+body.reigen-cinematic-active.reigen-watching #playlist,
+body.reigen-cinematic-active.reigen-watching #items.ytd-playlist-panel-renderer,
+body.reigen-cinematic-active.reigen-watching #header-contents, 
+body.reigen-cinematic-active.reigen-watching .header.ytd-playlist-panel-renderer,
+body.reigen-cinematic-active.reigen-watching ytd-playlist-panel-video-renderer,
+body.reigen-cinematic-active.reigen-watching ytd-playlist-panel-video-renderer:hover,
+body.reigen-cinematic-active.reigen-watching ytd-watch-metadata,
+body.reigen-cinematic-active.reigen-watching ytd-comments,
+body.reigen-cinematic-active.reigen-watching #masthead-container,
+body.reigen-cinematic-active.reigen-watching ytd-masthead,
+body.reigen-cinematic-active.reigen-watching ytd-masthead #container,
+body.reigen-cinematic-active.reigen-watching #player,
+body.reigen-cinematic-active.reigen-watching ytd-player,
+body.reigen-cinematic-active.reigen-watching #player-container,
+body.reigen-cinematic-active.reigen-watching #player-container-outer,
+body.reigen-cinematic-active.reigen-watching #player-container-inner,
+body.reigen-cinematic-active.reigen-watching #container.ytd-player,
+body.reigen-cinematic-active.reigen-watching #full-bleed-container,
+body.reigen-cinematic-active.reigen-watching #player-full-bleed-container,
+body.reigen-cinematic-active.reigen-watching #player-theater-container,
+body.reigen-cinematic-active.reigen-watching #player-wide-container,
+body.reigen-cinematic-active.reigen-watching #chat-container {
+  background: rgba(15, 15, 15, 0.01) !important;
+  background-color: rgba(15, 15, 15, 0.01) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Kill the masthead bottom separator line and any borders/shadows/gaps at the boundary of scrollable page content and player */
+body.reigen-cinematic-active.reigen-watching #masthead-container,
+body.reigen-cinematic-active.reigen-watching ytd-masthead,
+body.reigen-cinematic-active.reigen-watching ytd-masthead #container,
+body.reigen-cinematic-active.reigen-watching ytd-masthead #background,
+body.reigen-cinematic-active.reigen-watching #page-manager,
+body.reigen-cinematic-active.reigen-watching ytd-watch-flexy,
+body.reigen-cinematic-active.reigen-watching #player,
+body.reigen-cinematic-active.reigen-watching ytd-player,
+body.reigen-cinematic-active.reigen-watching #player-container,
+body.reigen-cinematic-active.reigen-watching #player-container-outer,
+body.reigen-cinematic-active.reigen-watching #player-container-inner,
+body.reigen-cinematic-active.reigen-watching #container.ytd-player,
+body.reigen-cinematic-active.reigen-watching #full-bleed-container,
+body.reigen-cinematic-active.reigen-watching #player-full-bleed-container,
+body.reigen-cinematic-active.reigen-watching #player-theater-container,
+body.reigen-cinematic-active.reigen-watching #player-wide-container {
+  border-top: none !important;
+  border-bottom: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Kill the thin black separator line under the masthead */
+body.reigen-cinematic-active.reigen-watching #masthead-container {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+body.reigen-cinematic-active.reigen-watching #masthead-container::after,
+body.reigen-cinematic-active.reigen-watching ytd-masthead::after,
+body.reigen-cinematic-active.reigen-watching ytd-masthead #background::after,
+body.reigen-cinematic-active.reigen-watching #page-manager::before,
+body.reigen-cinematic-active.reigen-watching #full-bleed-container::before {
+  display: none !important;
+  height: 0 !important;
+  border: none !important;
+}
+body.reigen-cinematic-active.reigen-watching ytd-masthead #background {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Make sure the main layout has dark background under the glow */
+body.reigen-cinematic-active:not(.reigen-watching) ytd-app {
+  background: #0f0f0f !important;
+}
+
+/* Preserve popup drop-downs, suggestion sections to remain Opaque */
+.sbdd_a, .sbsb_a, .sbdd_b, .sbpki, .gstl_50, .sbqs_c, 
+ytd-search-suggestion-renderer, ytd-search-suggestions-section-renderer,
+ytd-popup-container, tp-yt-iron-dropdown, ytd-multi-page-menu-renderer {
+  background: #0f0f0f !important;
+  opacity: 1 !important;
+  z-index: 2000 !important;
+}
+
+#movie_player, .html5-video-player {
+  background: rgba(15, 15, 15, 0.01) !important;
+}
+
+ytd-thumbnail, yt-image, img, ytd-moving-thumbnail-renderer {
+  background-color: rgba(15, 15, 15, 0.01) !important;
+  visibility: visible !important;
+}
+
+#cinematics {
+  display: none !important; /* Hide YouTube's built-in ambient mode */
+}
+
+/* --- MINIMALIST SEARCH STYLES --- */
+body.reigen-search-active ytd-masthead #center {
+  display: none !important;
+}
+
+body.reigen-search-active.search-expanded ytd-masthead #center {
+  display: flex !important;
+  max-width: 600px !important;
+  margin: 0 20px !important;
+  flex: 1 1 auto !important;
+}
+
+#custom-search-trigger {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#custom-search-trigger:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+#custom-search-trigger svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+}
