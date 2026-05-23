@@ -25,31 +25,28 @@
 
 ### 🌌 Ambient Glow in Action
 
-<p align="center">
-  <img src="screenshots/ambient-glow.png" alt="Ambient Glow Effect — dynamic colors radiate from the video edges, creating a cinematic backdrop" width="100%" />
-</p>
-
-> The ambient glow engine samples colors from the video in real-time and projects them as smooth radial gradients across the entire page background — creating an immersive, theater-like atmosphere.
-
----
-
-### 🎛️ Control Panel
+The glow engine samples colors from the video edges in real-time and projects them as smooth radial gradients across the entire page — creating an immersive, theater-like atmosphere.
 
 <p align="center">
-  <img src="screenshots/popup-panel.png" alt="YT-Reigen popup control panel with glassmorphism design" width="340" />
+  <img src="screenshots/ambient-teal.png" alt="Teal ambient glow — DanDaDan Opening" width="100%" />
 </p>
+<p align="center"><em>🎵 DanDaDan OP — Teal / Green ambient glow matching the anime visuals</em></p>
 
-> A premium glassmorphism popup panel lets you toggle features on/off. The status badge shows whether the extension is active on the current YouTube tab.
-
----
-
-### 🔍 Minimalist Search
+<br/>
 
 <p align="center">
-  <img src="screenshots/minimalist-search.png" alt="YouTube masthead with collapsed search bar for a cleaner UI" width="100%" />
+  <img src="screenshots/ambient-red.png" alt="Red ambient glow — Project Hail Mary" width="100%" />
 </p>
+<p align="center"><em>🚀 Project Hail Mary — Deep red glow radiating from the cinematic space scene</em></p>
 
-> The default YouTube search bar is hidden and replaced with a compact search icon. Press **`S`** to expand it instantly, or **`Esc`** to dismiss.
+<br/>
+
+<p align="center">
+  <img src="screenshots/ambient-purple.png" alt="Purple ambient glow — Olivia Rodrigo" width="100%" />
+</p>
+<p align="center"><em>🎤 Olivia Rodrigo – drop dead — Purple / pink ambient glow matching the music video</em></p>
+
+> **Notice how the entire page background, masthead, and sidebar become transparent** — the dynamic glow bleeds through everything, adapting to whatever you're watching.
 
 ---
 
@@ -113,9 +110,9 @@ YT-Reigen/
 ├── popup.js               # Popup logic — toggle sync with chrome.storage
 ├── icon.png               # Extension icon
 ├── screenshots/           # README screenshots
-│   ├── ambient-glow.png
-│   ├── popup-panel.png
-│   └── minimalist-search.png
+│   ├── ambient-teal.png
+│   ├── ambient-red.png
+│   └── ambient-purple.png
 └── README.md
 ```
 
