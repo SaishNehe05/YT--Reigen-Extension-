@@ -31,7 +31,7 @@
 
 ### 🌌 Ambient Glow in Action
 
-The glow engine samples colors from the video edges in real-time and projects them as smooth radial gradients across the entire page — creating an immersive, theater-like atmosphere.
+The glow engine samples colours from the video edges in real-time and projects them as smooth radial gradients across the entire page — creating an immersive, theater-like atmosphere.
 
 <p align="center">
   <img src="screenshots/ambient-teal.png" alt="Teal ambient glow — DanDaDan Opening" width="100%" />
