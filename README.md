@@ -25,7 +25,6 @@
   </a>
 </p>
 
-
 ---
 
 ## 🖼️ Screenshots
