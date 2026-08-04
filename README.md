@@ -7,7 +7,7 @@
 <p align="center">
   <strong>🎬 Cinematic Ambient Engine for YouTube</strong>
 </p>
-
+ 
 <p align="center">
   A minimalist Chrome extension that transforms YouTube into an immersive, theater-like experience with real-time ambient glow, transparent UI, and a distraction-free layout.
 </p>
