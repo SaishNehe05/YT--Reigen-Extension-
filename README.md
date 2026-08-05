@@ -11,7 +11,7 @@
 <p align="center">
   A minimalist Chrome extension that transforms YouTube into an immersive, theater-like experience with real-time ambient glow, transparent UI, and a distraction-free layout.
 </p>
- 
+
 <p align="center">
   <img src="https://img.shields.io/badge/Manifest-V3-blue?style=flat-square" alt="Manifest V3" />
   <img src="https://img.shields.io/badge/Version-1.0.0-ff4b4b?style=flat-square" alt="Version 1.0.0" />
